@@ -29,13 +29,15 @@ NRFX_PATH    = lib/nrfx
 SD_PATH      = lib/softdevice/$(SD_FILENAME)
 
 # SD_VERSION can be overwritten by board.mk
-ifndef SD_VERSION
-	ifeq ($(MCU_SUB_VARIANT),nrf52833)
-	SD_VERSION = 7.3.0
-	else
-	SD_VERSION = 6.1.1
-	endif
-endif
+SD_VERSION = 7.3.0
+
+# ifndef SD_VERSION
+#	ifeq ($(MCU_SUB_VARIANT),nrf52833)
+#	SD_VERSION = 7.3.0
+#	else
+#	SD_VERSION = 6.1.1
+#	endif
+#endif
 
 SD_FILENAME  = $(SD_NAME)_nrf52_$(SD_VERSION)
 SD_HEX       = $(SD_PATH)/$(SD_FILENAME)_softdevice.hex
